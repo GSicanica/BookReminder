@@ -1,0 +1,16 @@
+apply plugin: 'kotlin-android'
+apply from: "$rootDir/config/quality.gradle"
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    implementation Deps.kotlin
+    implementation Deps.logging
+}

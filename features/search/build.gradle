@@ -1,0 +1,22 @@
+apply from: "$rootDir/config/dependencies/feature_dependencies.gradle"
+apply from: "$rootDir/config/dependencies/compose_dependencies.gradle"
+
+android {
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+    implementation project(":libraries:core")
+    implementation project(":domain")
+    implementation Deps.koin.android
+    implementation Deps.koin.compose
+    testImplementation project(":libraries:test")
+    androidTestImplementation project(":libraries:test")
+}
