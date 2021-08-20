@@ -4,5 +4,7 @@ dependencies {
     implementation Deps.android.ktx
     implementation Deps.android.material
     implementation Deps.coroutines.core
-    implementation Deps.koin.android
+    implementation Deps.hilt.hilt
+    kapt HiltDeps.hiltCompiler
+    implementation Deps.hilt.navigationHiltCompose
 }

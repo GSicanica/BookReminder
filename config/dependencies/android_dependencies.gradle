@@ -1,5 +1,8 @@
 apply plugin: 'kotlin-android'
 apply from: "$rootDir/config/quality.gradle"
+apply plugin: "kotlin-kapt"
+apply plugin: "dagger.hilt.android.plugin"
+
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -13,4 +16,10 @@ android {
 dependencies {
     implementation Deps.kotlin
     implementation Deps.logging
+    implementation Deps.android.appcompat
+    implementation Deps.android.material
+    kapt HiltDeps.hiltCompiler
+    kapt HiltDeps.hiltAndroidCompiler
+    implementation HiltDeps.hilt
+    implementation HiltDeps.navigationHiltCompose
 }

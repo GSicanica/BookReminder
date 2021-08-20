@@ -3,11 +3,13 @@ apply plugin: "com.android.application"
 apply from: "$rootDir/config/dependencies/android_dependencies.gradle"
 apply from: "$rootDir/config/dependencies/compose_dependencies.gradle"
 apply from: "$rootDir/config/artifacts.gradle"
-
-apply plugin: "kotlin-kapt"
 apply plugin: "kotlin-parcelize"
 
+
 android {
+
+    compileSdkVersion 30
+
     defaultConfig {
         applicationId "com.example.bookreminder"
         versionCode Releases.versionCode
@@ -29,13 +31,6 @@ android {
 
         lintConfig file("${rootDir}/config/filters/lint.xml")
         htmlOutput file("${buildDir}/reports/lint.html")
-    }
-
-    kapt {
-        javacOptions {
-            option("-Xmaxerrs", 1000)
-            option("-Werror")
-        }
     }
 
     //dynamicFeatures = [":features:category"]
@@ -60,9 +55,9 @@ dependencies {
     implementation project(":features:category")
     implementation project(":features:preference")
     implementation project(":features:search")
+    implementation project(':libraries:designsystem')
 
     implementation Deps.compose.navigation
     implementation Deps.compose.activity
     implementation Deps.android.playCore
-    implementation Deps.koin.android
 }

@@ -24,8 +24,9 @@ dependencies {
 
     implementation Deps.android.playCore
 
-    implementation Deps.koin.android
-    implementation Deps.koin.compose
+    implementation Deps.hilt.hilt
+    //kapt HiltDeps.hiltCompiler
+    implementation Deps.hilt.navigationHiltCompose
 
     testImplementation Deps.test.coreKtx
     androidTestImplementation Deps.compose.activity

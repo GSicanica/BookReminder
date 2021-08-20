@@ -3,7 +3,5 @@ apply from: "$rootDir/config/quality.gradle"
 
 dependencies {
     implementation project(":domain")
-
-    implementation Deps.koin.core
     implementation Deps.coroutines.core
 }

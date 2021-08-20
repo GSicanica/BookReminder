@@ -16,9 +16,11 @@ dependencies {
     implementation project(":domain")
     implementation project(':libraries:designsystem')
 
-    implementation Deps.koin.android
+    implementation Deps.hilt.hilt
+    //kapt HiltDeps.hiltCompiler
+    implementation Deps.hilt.navigationHiltCompose
     implementation Deps.coroutines.core
-    implementation Deps.koin.compose
+    implementation Deps.hilt.compose
     implementation Deps.compose.activity
 
     testImplementation project(':libraries:test')

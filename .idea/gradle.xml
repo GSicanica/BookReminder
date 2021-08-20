@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -21,6 +22,7 @@
             <option value="$PROJECT_DIR$/features/search" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/core" />
+            <option value="$PROJECT_DIR$/libraries/designsystem" />
             <option value="$PROJECT_DIR$/libraries/navigation" />
             <option value="$PROJECT_DIR$/libraries/test" />
           </set>

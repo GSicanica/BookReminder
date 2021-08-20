@@ -1,15 +1,16 @@
 object Releases {
-    const val versionCode = 20000
-    const val versionName = "2.0.0"
+    const val versionCode = 1
+    const val versionName = "1.0"
 }
 
 object Versions {
+
     const val compileSdk = 30
     const val targetSdk = 30
-    const val minSdk = 24
+    const val minSdk =  26
 
     const val kotlin = "1.5.10"
-    const val material = "1.3.0"
+    const val material = "1.4.0"
     const val constraintLayout = "2.0.4"
     const val ktx = "1.0.2"
     const val room = "2.3.0"
@@ -32,7 +33,7 @@ object Versions {
 
     const val espresso = "3.3.0"
 
-    const val compose = "1.0.0"
+    const val compose = "1.0.0-rc02"
     const val composeNav = "2.4.0-alpha01"
     const val composeViewModel = "1.0.0-alpha06"
     const val composeActivity = "1.3.0-beta01"
@@ -41,6 +42,12 @@ object Versions {
 
     const val detekt = "1.13.1"
     const val ktlint = "0.39.0"
+
+    const val hilt = "2.37"
+    const val hiltAndroidCompiler = "1.0.0"
+    const val hiltCompose = "1.0.0-alpha03"
+
+    const val insets = "0.16.1"
 }
 
 object Deps {
@@ -48,7 +55,7 @@ object Deps {
     val logging = "io.github.microutils:kotlin-logging-jvm:${Versions.logging}"
     val android = AndroidDeps
     val coroutines = CoroutinesDeps
-    val koin = KoinDeps
+    val hilt = HiltDeps
     val compose = ComposeDeps
     val test = TestDeps
     val quality = QualityDeps
@@ -56,6 +63,7 @@ object Deps {
 }
 
 object AndroidDeps {
+    val appcompat = "androidx.appcompat:appcompat:1.3.0"
     val material = "com.google.android.material:material:${Versions.material}"
     val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     val ktx = "androidx.core:core-ktx:${Versions.ktx}"
@@ -74,11 +82,12 @@ object RoomDeps {
     val ktx = "androidx.room:room-ktx:${Versions.room}"
 }
 
-object KoinDeps {
-    val core = "io.insert-koin:koin-core:${Versions.koin}"
-    val android = "io.insert-koin:koin-android:${Versions.koin}"
-    val compose = "io.insert-koin:koin-androidx-compose:${Versions.koin}"
-    val test = "io.insert-koin:koin-test:${Versions.koin}"
+object HiltDeps {
+    val navigationHiltCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltCompose}"
+    val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltAndroidCompiler}"
+    val hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltCompose}"
 }
 
 object ComposeDeps {
@@ -92,6 +101,8 @@ object ComposeDeps {
     val uiTest = "androidx.compose.ui:ui-test:${Versions.compose}"
     val junit4 = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
     val manifest = "androidx.compose.ui:ui-test-manifest:${Versions.compose}"
+
+    val insets = "com.google.accompanist:accompanist-insets:${Versions.insets}"
 }
 
 object TestDeps {
@@ -114,4 +125,5 @@ object QualityDeps {
 object GradleDeps {
     val buildGradle = "com.android.tools.build:gradle:${Versions.buildGradle}"
     val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    val hiltGradle = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
 }

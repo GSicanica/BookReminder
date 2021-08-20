@@ -19,6 +19,4 @@ dependencies {
     implementation project(":domain")
     testImplementation project(":libraries:test")
     androidTestImplementation project(":libraries:test")
-    implementation Deps.koin.android
-    implementation Deps.koin.compose
 }

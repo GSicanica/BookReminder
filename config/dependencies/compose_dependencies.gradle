@@ -18,6 +18,7 @@ dependencies {
     implementation Deps.compose.material
     implementation Deps.compose.tooling
     implementation Deps.compose.icons
+    implementation Deps.compose.insets
 
     androidTestImplementation(Deps.compose.uiTest) {
         exclude group: "androidx.core", module: "core-ktx"
