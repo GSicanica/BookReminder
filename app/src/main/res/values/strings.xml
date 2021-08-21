@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">BookReminder</string>
     <string name="add_book">Add Book</string>
+    <string name="book_title">Book Title</string>
+    <string name="author_name">Author</string>
+    <string name="book_info">Info</string>
 </resources>

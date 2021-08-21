@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/data/repository" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/book" />
             <option value="$PROJECT_DIR$/features/category" />
             <option value="$PROJECT_DIR$/features/preference" />
             <option value="$PROJECT_DIR$/features/search" />
