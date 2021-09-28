@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.goransico.local.BookReminderTheme
 import com.goransico.bookreminder.navigation.NavGraph
 import dagger.hilt.android.AndroidEntryPoint
 

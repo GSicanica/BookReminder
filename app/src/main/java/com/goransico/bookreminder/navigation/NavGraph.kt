@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
-import com.goransico.bookreminder.MainNavRoutes
+import com.goransico.navigation.MainNavRoutes
 import com.goransico.bookreminder.MainViewModel
 import com.goransico.bookreminder.presentation.MainScreen
 
