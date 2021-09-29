@@ -22,6 +22,7 @@ dependencies {
 
     implementation Deps.android.room.runtime
     implementation Deps.android.room.ktx
+    implementation project(path: ':domain')
     kapt Deps.android.room.compiler
 
     androidTestImplementation Deps.test.runner

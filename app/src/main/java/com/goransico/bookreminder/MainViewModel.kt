@@ -1,10 +1,9 @@
 package com.goransico.bookreminder
 
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.goransico.bookreminder.R
 import com.goransico.designsystem.components.BookInputDialogConfig
 
 class MainViewModel : ViewModel() {

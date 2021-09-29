@@ -1,22 +1,26 @@
 package com.goransico.book.presentation.list
 
 import androidx.lifecycle.ViewModel
-import com.goransico.book.model.Book
-import com.goransico.book.model.BookWithCategory
+import com.goransico.domain.usecase.book.LoadBook
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class BookViewModel () : ViewModel() {
+@HiltViewModel
+class BookViewModel @Inject constructor() : ViewModel() {
 
-    private val book1 = BookWithCategory(Book(1,"Book", null))
-    private val book2 = BookWithCategory(Book(3,"Book2", null))
-    private val listOfBooks = listOf(book1, book2)
+    @Inject
+    lateinit var books: LoadBook
 
-    fun loadBookList(value: Long? = null) : Flow<BookListViewState> {
-        return  flow {
-            while(true) {
-                emit(BookListViewState.Loaded(listOfBooks))
+    fun loadBookList(): Flow<BookListViewState> {
+        return flow {
+            val state = if (books.loadAllBooks().isNotEmpty()) {
+                BookListViewState.Loaded(books.loadAllBooks())
+            } else {
+                BookListViewState.Empty
             }
+            emit(state)
         }
     }
 }

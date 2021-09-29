@@ -5,6 +5,7 @@ dependencies {
     implementation Deps.android.material
     implementation Deps.coroutines.core
     implementation Deps.hilt.hilt
+    implementation Deps.hilt.hiltLifecycleViewModel
     kapt HiltDeps.hiltCompiler
     implementation Deps.hilt.navigationHiltCompose
 }

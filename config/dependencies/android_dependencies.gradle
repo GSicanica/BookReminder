@@ -14,6 +14,10 @@ android {
 }
 
 dependencies {
+    implementation Deps.android.ktx
+    implementation Deps.android.navFragmentKtx
+    implementation Deps.android.navUiKtx
+
     implementation Deps.kotlin
     implementation Deps.logging
     implementation Deps.android.appcompat
@@ -22,4 +26,5 @@ dependencies {
     kapt HiltDeps.hiltAndroidCompiler
     implementation HiltDeps.hilt
     implementation HiltDeps.navigationHiltCompose
+    implementation HiltDeps.hiltLifecycleViewModel
 }

@@ -12,15 +12,12 @@ object Versions {
     const val kotlin = "1.5.10"
     const val material = "1.4.0"
     const val constraintLayout = "2.0.4"
-    const val ktx = "1.0.2"
+    const val ktx = "1.6.0"
     const val room = "2.3.0"
     const val playCore = "1.10.0"
 
     const val coroutines = "1.4.0"
-
     const val logging = "2.0.6"
-
-    const val koin = "3.1.0"
 
     const val testJunit = "4.12"
     const val testRunner = "1.1.1"
@@ -29,8 +26,6 @@ object Versions {
     const val testUiAutomator = "2.2.0"
     const val testJunitExt = "1.1.0"
     const val testRoom = "2.1.0"
-    const val barista = "3.7.0"
-
     const val espresso = "3.3.0"
 
     const val compose = "1.0.0-rc02"
@@ -48,6 +43,8 @@ object Versions {
     const val hiltCompose = "1.0.0-alpha03"
 
     const val insets = "0.16.1"
+
+    const val nav_version = "2.3.5"
 }
 
 object Deps {
@@ -69,6 +66,8 @@ object AndroidDeps {
     val ktx = "androidx.core:core-ktx:${Versions.ktx}"
     val playCore = "com.google.android.play:core:${Versions.playCore}"
     val room = RoomDeps
+    val navFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
+    val navUiKtx= "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
 }
 
 object CoroutinesDeps {
@@ -101,7 +100,6 @@ object ComposeDeps {
     val uiTest = "androidx.compose.ui:ui-test:${Versions.compose}"
     val junit4 = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
     val manifest = "androidx.compose.ui:ui-test-manifest:${Versions.compose}"
-
     val insets = "com.google.accompanist:accompanist-insets:${Versions.insets}"
 }
 

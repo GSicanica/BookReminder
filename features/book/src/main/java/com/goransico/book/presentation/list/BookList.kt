@@ -3,46 +3,35 @@ package com.goransico.book.presentation.list
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
-import com.goransico.category.presentation.CategoryViewModel
-import com.goransico.category.presentation.CategoryState
-import com.goransico.book.presentation.detail.CategoryId
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.goransico.category.presentation.CategoryViewModel
 
-var bookListViewModel = BookViewModel()
 var categoryViewModel = CategoryViewModel()
 
 @Composable
 fun BookListLoader(modifier: Modifier = Modifier) {
 
+    val bookListViewModel: BookViewModel = hiltViewModel()
     val coroutineScope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState()
 
-    val (currentCategory, setCategory) = rememberSaveable { mutableStateOf<CategoryId?>(null) }
-
     //initial state loading
-    val bookViewState by remember(bookListViewModel, currentCategory) {
-        bookListViewModel.loadBookList(currentCategory?.value)
+    val bookViewState by remember {
+        bookListViewModel.loadBookList()
     }.collectAsState(initial = BookListViewState.Loading)
 
-    val categoryViewState by remember(categoryViewModel) { categoryViewModel.loadCategories() }
-        .collectAsState(initial = CategoryState.Loading)
-
     val bookHandler = BookStateHandler(
-        state = bookViewState,
-        onCheckedChange = {},
-        onItemCLick = {},
-        onAddClick = {}
-    )
-
-    val categoryHandler = CategoryStateHandler(
-        state = categoryViewState,
-        currentCategory = currentCategory,
-        onCategoryChange = setCategory,
-    )
-
+            state = bookViewState,
+            onCheckedChange = {},
+            onItemCLick = {},
+            onAddClick = {}
+        )
 
     BoxWithConstraints {
         Scaffold(
@@ -53,7 +42,7 @@ fun BookListLoader(modifier: Modifier = Modifier) {
             Crossfade(bookHandler.state) { state ->
                 when (state) {
                     BookListViewState.Loading -> Text("Loading")
-                    is BookListViewState.Loaded -> Text("Loaded")
+                    is BookListViewState.Loaded -> Text(state.items.last().toString())
                     is BookListViewState.Error -> Text("Error")
                 }
             }

@@ -1,6 +1,7 @@
 package com.goransico.bookreminder.presentation
 
 import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.FabPosition
 import androidx.compose.material.Scaffold
@@ -9,11 +10,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import com.google.accompanist.insets.systemBarsPadding
+import com.goransico.book.presentation.list.BookListLoader
 import com.goransico.bookreminder.MainViewModel
+import com.goransico.bookreminder.R
 import com.goransico.designsystem.components.AddFloatingButton
 import com.goransico.designsystem.components.BookInputDialog
-import com.goransico.book.presentation.list.BookListLoader
-import com.goransico.bookreminder.R
 
 /**
  * Main Screen
@@ -44,7 +45,7 @@ fun MainScreen(viewModel: MainViewModel) {
             },
             floatingActionButtonPosition = fabPosition
         ) {
-            BookInputDialog(modifier = modifier.fillMaxSize(), viewModel.bookInputDialogConfig)
+            //BookInputDialog(modifier = modifier.absolutePadding(), viewModel.bookInputDialogConfig)
             BookListLoader()
         }
     }
